@@ -34,7 +34,7 @@ async function handleLogin() {
       <n-input v-model:value="formData.token" placeholder="Authorization 值" />
     </n-form-item>
     <n-flex>
-      <LoadButton :handle-click="handleLogin" type="primary">登录</LoadButton>
+      <LoadButton :handle-click="handleLogin" style="width: 100%" type="primary">登录</LoadButton>
     </n-flex>
   </n-form>
 </template>

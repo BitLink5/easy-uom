@@ -89,7 +89,7 @@ async function handleLogin() {
       />
     </n-form-item>
     <n-flex>
-      <LoadButton :handle-click="handleLogin" type="primary">登录</LoadButton>
+      <LoadButton :handle-click="handleLogin" style="width: 100%" type="primary">登录</LoadButton>
     </n-flex>
   </n-form>
 </template>

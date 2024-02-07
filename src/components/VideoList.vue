@@ -18,6 +18,11 @@ async function handleGetDuration() {
   duration.value = data.data
 }
 
+async function handleLearning(row) {
+  await connect(row)
+  handleGetDuration()
+}
+
 const time = computed(() => {
   if (duration.value === undefined) {
     return '等待获取'
@@ -29,16 +34,16 @@ const time = computed(() => {
 
 <template>
   <n-flex vertical>
-    <n-statistic :value="time" label="学习时间" />
+    <n-statistic :value="time" label="今日学习时长" />
     <n-flex>
-      <LoadButton :handle-click="handleGetDuration" type="info">刷新学习时间</LoadButton>
-      <LoadButton :handle-click="handleListVideo" type="info">刷新视频列表</LoadButton>
+      <LoadButton :handle-click="handleGetDuration">刷新学习时长</LoadButton>
+      <LoadButton :handle-click="handleListVideo">刷新视频列表</LoadButton>
     </n-flex>
     <n-list>
       <n-list-item v-for="row in videoList" :key="row.id">
         <n-flex align="center">
-          <LoadButton :handle-click="() => connect(row)" type="primary">一键学习</LoadButton>
-          <p style="font-size: 16px">{{ row.title }}</p>
+          <LoadButton :handle-click="() => handleLearning(row)" type="primary">学习</LoadButton>
+          <span style="font-size: 16px">{{ row.title }}</span>
         </n-flex>
       </n-list-item>
     </n-list>

@@ -42,12 +42,11 @@ const time = computed(() => {
     <n-list>
       <n-list-item v-for="row in videoList" :key="row.id">
         <n-flex align="center">
-          <LoadButton :handle-click="() => handleLearning(row)" type="primary">学习</LoadButton>
+          <LoadButton :handle-click="() => handleLearning(row)" type="primary">我已学习</LoadButton>
+          <n-tag>时长：{{ row.duration }}</n-tag>
           <span style="font-size: 16px">{{ row.title }}</span>
         </n-flex>
       </n-list-item>
     </n-list>
   </n-flex>
 </template>
-
-<style scoped></style>

@@ -5,9 +5,6 @@ import LoadButton from '@/components/LoadButton.vue'
 const videoList = ref([])
 const duration = ref()
 
-handleListVideo()
-handleGetDuration()
-
 async function handleListVideo() {
   const { rows } = await listVideo()
   videoList.value = rows
@@ -25,7 +22,7 @@ async function handleLearning(row) {
 
 const time = computed(() => {
   if (duration.value === undefined) {
-    return '等待获取'
+    return '等待手动刷新'
   }
   const seconds = parseInt(duration.value)
   return `${Math.floor(seconds / 60)}分${seconds % 60}秒`

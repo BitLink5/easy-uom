@@ -34,14 +34,15 @@ async function handleAlive() {
       </p>
       <p>
         该网站通过 <a href="https://render.com/" target="_blank">Render</a> 提供的<b
-          >重写 Rewrite 功能</b
-        >代表您与 UOM 服务器通信
+      >重写 Rewrite 功能</b
+      >代表您与 UOM 服务器通信
       </p>
       <p>
         该网站是<a href="https://github.com/BitLink5/easy-uom" target="_blank">开源项目</a
-        >，仅供学习交流，<b>严禁用于商业用途</b>
+      >，仅供学习交流，<b>严禁用于商业用途</b>
       </p>
-      <h2>该网站仅帮助您增加学习时长，<b>请确保你已经学习并掌握视频内容</b></h2>
+      <p>请不要乱点按钮、滥发请求，避免不当使用导致账号问题</p>
+      <h2>该网站仅帮助您增加今日学习时长，<b>请确保你已经学习并掌握视频内容</b></h2>
       <n-flex>
         <LoadButton :handle-click="handleAlive" type="info">验证登录状态</LoadButton>
         <n-button type="warning" @click="handleLogout">登出</n-button>
@@ -49,8 +50,9 @@ async function handleAlive() {
     </n-card>
     <n-card>
       <template #header>教程</template>
-      <p>点击下方学习按钮增加时长</p>
-      <p>今日学习时长大于45分钟可在UOM 系统中直接进入考试</p>
+      <p>点击刷新获取对应数据，轻点我已学习按钮增加时长</p>
+      <p>今日学习时长大于45分钟可在 UOM 系统中直接进入考试</p>
+      <p><b>不要增加过多时长</b>，浅尝辄止，过犹不及</p>
     </n-card>
     <n-card>
       <template #header>学习</template>
